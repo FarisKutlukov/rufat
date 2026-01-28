@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Юлдашев Руфат — герой сна</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #111, #2b2b2b);
+            color: #f2f2f2;
+        }
+
+        header {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 4px solid crimson;
+        }
+
+        header h1 {
+            color: crimson;
+            font-size: 44px;
+            text-shadow: 0 0 15px crimson;
+        }
+
+        header p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        nav {
+            background: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: crimson;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .card {
+            background: #222;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #000;
+        }
+
+        h2 {
+            color: crimson;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .dream {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .reality {
+            color: #ff8080;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: crimson;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 15px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .dark-mode {
+            background: #000;
+            color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Юлдашев Руфат</h1>
+    <p>Герой кс • Легенда фесита • Алматы, Казахстан</p>
+</header>
+
+<nav>
+    <a href="#bio">Биография</a>
+    <a href="#dream">В кс</a>
+    <a href="#reality">В реальности</a>
+    <a href="#facts">Факты</a>
+    <a href="#stats">Статистика</a>
+</nav>
+
+<section id="bio">
+    <div class="card">
+        <h2>Общая информация</h2>
+        <ul>
+            <li>ФИО: Юлдашев Руфат</li>
+            <li>Город: Алматы</li>
+            <li>Страна: Казахстан</li>
+            <li>Год рождения: 2009</li>
+        </ul>
+        <p>
+            С ранних лет Руфат считался лоу табом.
+            По крайней мере, так казалось.
+        </p>
+    </div>
+</section>
+
+<section id="dream">
+    <div class="card">
+        <h2>Абдусомад во сне</h2>
+        <p class="dream">
+            В кс наш герой был:
+        </p>
+        <ul>
+            <li> Сильным и выносливым</li>
+            <li> Поднимал рейтинг одной рукой (другой рукой...)</li>
+            <li> Катал катки без инструкций</li>
+            <li> Побеждал всех и вся</li>
+            <li> Увлекался всеми картами сразу</li>
+        </ul>
+        <p>
+            К сожалению (или к счастью), всё это происходило исключительно в кс.
+        </p>
+    </div>
+</section>
+
+<section id="reality">
+    <div class="card">
+        <h2>Абдусомад в реальной жизни</h2>
+        <p class="reality">
+            В реальности всё было немного иначе:
+        </p>
+        <ul>
+            <li>🏃 Бегал где попало и как попало</li>
+            <li>🤦‍♂️ Вёл себя странно и непредсказуемо</li>
+            <li>📺 Смотрел мультики</li>
+            <li>🧚 Любил «Винкс»</li>
+            <li>🐷 С уважением относился к «Свинке Пеппе»</li>
+        </ul>
+        <p>
+            Настоящий человек контрастов.
+        </p>
+    </div>
+</section>
+
+<section id="facts">
+    <div class="card">
+        <h2>Интересные факты</h2>
+        <ul>
+            <li>Может выглядеть героем, но только если закрыть глаза</li>
+            <li>Его воображение работает лучше мотивации</li>
+            <li>Мечты сильнее реальности</li>
+            <li>Легенда в своей команде (по его версии)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="stats">
+    <div class="card">
+        <h2>Живая статистика</h2>
+        <p id="age"></p>
+        <p id="timer"></p>
+        <button onclick="toggleMode()">Включить режим легенды</button>
+    </div>
+</section>
+
+<footer>
+    © Юлдашев Руфат  
+    <br>
+    Все совпадения реальны. Почти.
+</footer>
+
+<script>
+    const birthYear = 2009;
+
+    function updateAge() {
+        const now = new Date();
+        const age = now.getFullYear() - birthYear;
+        document.getElementById("age").innerText =
+            "Текущий возраст: " + age + " лет";
+    }
+
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        document.getElementById("timer").innerText =
+            "Секунд размышлений о жизни: " + seconds;
+    }, 1000);
+
+    function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    updateAge();
+</script>
+
+</body>
+</html>
